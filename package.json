@@ -1,0 +1,26 @@
+{
+  "name": "Basic-Web-Page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClarkCassie/Wk02---Basic-Web-Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClarkCassie/Wk02---Basic-Web-Page/issues"
+  },
+  "homepage": "https://github.com/ClarkCassie/Wk02---Basic-Web-Page#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
