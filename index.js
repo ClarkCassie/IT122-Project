@@ -1,30 +1,30 @@
 // Imports
 const express = require('express');
+const path = require('path');
+
 const app = express();
-//const port = 5000;
+const PORT = 3000;
 
+//When a request is made to the server, an HTML file is served - This is my 'about' route
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '/index.html'))
+);
 
-// Static Files
-app.use(express.static('public'))
-app.use('/css', express.static(__dirname + 'public/css'));
-app.use('/js', express.static(__dirname + 'public/js'));
-app.use('/img', express.static(__dirname + 'public/img'));
+app.post('/newItem', (req, res) =>
+  res.send(`a post request with /newItem route on port ${PORT}`)
+);
 
-// Set views
-app.set('views', './views');
-app.set('view engine', 'ejs');
+app.put('/item', (req, res) =>
+  res.send(`a put request with /item route on port ${PORT}`)
+);
 
-// Set routes
-app.get('', (req, res) => {
-  res.render('index', { text: 'This is EJS'})
-});
+app.delete('/item', (req, res) =>
+  res.send(`a delete request with /item route on port ${PORT}`)
+);
 
-app.get('/about', (req, res) => {
-  re.render('about', {text: 'This is about' })
-});
+//Here is the default welcome message
+app.listen(PORT, () =>
+  console.log(`Welcome.  This server is running on port ${PORT}.  Connect to localhost:3000 to see my routes in action!`)
+);
 
-let listener = app.listen();
-console.log(`Listening to port number ${listener.address().port}`);
-
-//app.listen(port, () => console.info(`App listen on port ${port}`));
 
