@@ -1,0 +1,68 @@
+<html>
+
+<style>
+    .image {
+        margin: 5px;
+    }
+
+    #breed {
+        text-align: center;
+        background-color: #cccccc;
+    }
+
+</style>
+
+<body>
+<h2>Randog </h2>
+
+<script>
+
+//get all the images of the dogs in an array
+dogImages = [
+    'https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg',
+    'https://dogtime.com/assets/uploads/gallery/labradoodle-dog-breed-pictures/side-1.jpg',
+    'https://dogtime.com/assets/uploads/gallery/pit-bull-dog-breed-pictures/pit-bull-dog-breed-picture-1.jpg'
+]
+
+let selectedDog = "";
+
+function randomDog()
+{
+    //get random index from dogImages
+    randomIndex = Math.floor(Math.random() * dogImages.length);
+    //get the image from the random index
+    selectedDog = dogImages[randomIndex];
+    //display the selected random dog image
+    document.getElementById('dogPic').src = `${selectedDog}`
+    return selectedDog;
+}
+
+function breed()
+{
+    if (selectedDog === 'https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg')
+    {
+        var dog = "German Shepherd";
+    }
+    else if (selectedDog === 'https://dogtime.com/assets/uploads/gallery/labradoodle-dog-breed-pictures/side-1.jpg')
+    {
+        var dog = "Labradoodle";
+    }
+    else
+    {
+        var dog = "Pit Bull";
+    }
+    document.getElementById('dogBreed').innerHTML = dog;
+}
+
+</script>
+
+<div>
+    <button onclick="randomDog(); breed()">Fetch Dog!</button>
+    <div>
+        <h3 id="dogBreed"></h3>
+        <img id="dogPic"/>
+    </div>
+</div>
+
+</body>
+</html>
