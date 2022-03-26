@@ -10,6 +10,10 @@ app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/index.html'))
 );
 
+app.get('/dogs', (req, res) =>
+  res.sendFile(path.join(__dirname, 'random_dog.html'))
+);
+
 app.get('/about', (req, res) =>
 res.sendFile(path.join(__dirname, '/about.html'))
 );
@@ -30,5 +34,3 @@ app.delete('/item', (req, res) =>
 app.listen(PORT, () =>
   console.log(`Welcome.  This server is running on port ${PORT}.  Connect to localhost:3000 to see my routes in action!`)
 );
-
-
